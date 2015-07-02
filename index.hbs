@@ -1,0 +1,22 @@
+{{!< default}}
+
+{{! The main content area on the homepage }}
+<div class="col-xs-10 content">
+	{{#foreach posts}}
+	<div class="col-xs-4 post">
+	    <div class="col-xs-12 post_image">
+		    <a href="{{url}}">{{content words="0"}}</a>
+	    </div>
+	    <div class="col-xs-12 post_class">
+	        <div class="col-xs-12 post_title"><a href="{{url}}">{{{title}}}</a></div>
+	        <div class="col-xs-12 post_intro">{{excerpt characters="200"}}&hellip;</div>
+	        <div class="col-xs-8 post_date"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMM, YYYY"}}</time></div>
+	        <div class="col-xs-4 right post_more"><a href="{{url}}"><i class="fa fa-arrow-circle-o-right"></i></a></div>
+	    </div>
+	</div>
+	{{/foreach}}
+
+	<div class="col-xs-12 pagi">
+		<ul class="pagination">{{pagination}}</ul>
+	</div>
+</div>

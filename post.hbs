@@ -1,0 +1,38 @@
+{{!< default}}
+    <div class="col-xs-10 content">
+        {{#post}}
+        <div class="col-xs-10 post_page">
+            <div class="col-xs-12 post_page_title">{{{title}}}</div>
+                <div class="col-xs-12 post_page_data">{{content}}
+                    <div class="col-xs-8 post_date"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMM, YYYY"}}</time></div>
+                <div class="col-xs-4 share_post">
+                    <a href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
+                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" ><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" ><i class="fa fa-facebook-square"></i></a>
+                    <a href="https://plus.google.com/share?url={{url absolute="true"}}"
+                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" ><i class="fa fa-google-plus-square"></i></a>
+                </div>
+                </div>
+                <div class="alert alert-warning alert-dismissible col-xs-12 post_tags" role="alert">
+                  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                  <i class="fa fa-tags tag"></i>{{tags}}
+                </div>
+                {{/post}}   
+            </div>
+            <div class="col-xs-10 comment_wrap">
+            <div class="col-xs-12 comment">
+                <div id="disqus_thread"></div>
+                    <script type="text/javascript">
+                        var disqus_shortname = 'unique-demo';
+                        (function() {
+                            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                        })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            </div>
+    </div>
